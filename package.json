@@ -1,0 +1,124 @@
+{
+  "name": "js-evefyou-utils",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "./cjs/index.js",
+  "module": "./es/index.js",
+  "types": "./es/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./cjs/index.js",
+      "import": "./es/index.js"
+    },
+    "./date": {
+      "require": "./cjs/date/index.js",
+      "import": "./es/date/index.js"
+    },
+    "./dom": {
+      "require": "./cjs/dom/index.js",
+      "import": "./es/dom/index.js"
+    },
+    "./dom/addClass": {
+      "require": "./cjs/dom/addClass/index.js",
+      "import": "./es/dom/addClass/index.js"
+    },
+    "./dom/getHeight": {
+      "require": "./cjs/dom/getHeight/index.js",
+      "import": "./es/dom/getHeight/index.js"
+    },
+    "./dom/getPopupContainer": {
+      "require": "./cjs/dom/getPopupContainer/index.js",
+      "import": "./es/dom/getPopupContainer/index.js"
+    },
+    "./dom/getViewportOffset": {
+      "require": "./cjs/dom/getViewportOffset/index.js",
+      "import": "./es/dom/getViewportOffset/index.js"
+    },
+    "./generate/uuid": {
+      "require": "./cjs/generate/uuid/index.js",
+      "import": "./es/generate/uuid/index.js"
+    },
+    "./list": {
+      "require": "./cjs/list/index.js",
+      "import": "./es/list/index.js"
+    },
+    "./list/convertListToTree": {
+      "require": "./cjs/list/convertListToTree/index.js",
+      "import": "./es/list/convertListToTree/index.js"
+    },
+    "./list/isSubList": {
+      "require": "./cjs/list/isSubList/index.js",
+      "import": "./es/list/isSubList/index.js"
+    },
+    "./object": {
+      "require": "./cjs/object/index.js",
+      "import": "./es/object/index.js"
+    },
+    "./object/deepCompareObj": {
+      "require": "./cjs/object/deepCompareObj/index.js",
+      "import": "./es/object/deepCompareObj/index.js"
+    },
+    "./object/deepMergeObjectByKeys": {
+      "require": "./cjs/object/deepMergeObjectByKeys/index.js",
+      "import": "./es/object/deepMergeObjectByKeys/index.js"
+    },
+    "./object/deepSetObjectByKeys": {
+      "require": "./cjs/object/deepSetObjectByKeys/index.js",
+      "import": "./es/object/deepSetObjectByKeys/index.js"
+    }
+  },
+  "files": [
+    "cjs",
+    "es"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "build:tsup": "tsup utils/index.ts --dts --format=esm,cjs",
+    "clean": "rimraf node_modules",
+    "build:space": "tsc && cross-env NODE_OPTIONS=--max-old-space-size=4096 vite build",
+    "clean:cache": "rimraf node_modules/.cache/ && rimraf node_modules/.vite",
+    "clean:build": "rimraf es && rimraf cjs && rimraf css && rimraf dist && rimraf locale",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EvefyouFE/js-evefyou-utils.git"
+  },
+  "keywords": [
+    "js",
+    "utils",
+    "evefyou"
+  ],
+  "author": "EvefyouFE",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/EvefyouFE/js-evefyou-utils/issues"
+  },
+  "homepage": "https://github.com/EvefyouFE/js-evefyou-utils#readme",
+  "peerDependencies": {
+    "moment": ">=2.29.4",
+    "ramda": ">=0.29.0",
+    "uuid": ">=9.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.5.1",
+    "@types/ramda": "^0.29.0",
+    "@types/uuid": "^9.0.1",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.45.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.3",
+    "rimraf": "^5.0.1",
+    "tslib": "^2.6.1",
+    "tsup": "^7.2.0",
+    "typescript": "^5.1.6",
+    "vite": "^4.4.5",
+    "vite-plugin-dts": "^3.5.1",
+    "vite-tsconfig-paths": "^4.2.0"
+  }
+}
